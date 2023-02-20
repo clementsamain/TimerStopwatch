@@ -1,0 +1,142 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > SwingGUI</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">gui</a>
+</div>
+
+<h1>Coverage Summary for Class: SwingGUI (gui)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">SwingGUI</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (14/14)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package gui;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import states.EventListener;
+<i class="no-highlight">4</i>&nbsp;
+<i class="no-highlight">5</i>&nbsp;import javax.swing.JFrame;
+<i class="no-highlight">6</i>&nbsp;import java.awt.Container;
+<i class="no-highlight">7</i>&nbsp;import java.awt.GridLayout;
+<i class="no-highlight">8</i>&nbsp;
+<i class="no-highlight">9</i>&nbsp;/**
+<i class="no-highlight">10</i>&nbsp; * @author tommens
+<i class="no-highlight">11</i>&nbsp; * This class extends the HeadlessGUI to draw a real GUI on the screen
+<i class="no-highlight">12</i>&nbsp; */
+<i class="no-highlight">13</i>&nbsp;public class SwingGUI extends HeadlessGUI {
+<i class="no-highlight">14</i>&nbsp;
+<b class="fc"><i class="no-highlight">15</i>&nbsp;    public SwingGUI(EventListener o) { super(o); }</b>
+<i class="no-highlight">16</i>&nbsp;    
+<i class="no-highlight">17</i>&nbsp;    protected void initGUI() {
+<b class="fc"><i class="no-highlight">18</i>&nbsp;        super.initGUI();</b>
+<i class="no-highlight">19</i>&nbsp;
+<b class="fc"><i class="no-highlight">20</i>&nbsp;        JFrame myFrame = new JFrame(&quot;Chronometer&quot;);</b>
+<b class="fc"><i class="no-highlight">21</i>&nbsp;        Container myContent = myFrame.getContentPane();</b>
+<i class="no-highlight">22</i>&nbsp;        // grid layout with 2 rows and 3 columns
+<b class="fc"><i class="no-highlight">23</i>&nbsp;        myContent.setLayout(new GridLayout(2,3,1,1));</b>
+<i class="no-highlight">24</i>&nbsp;        // filling first row of grid (3 columns) with text information
+<b class="fc"><i class="no-highlight">25</i>&nbsp;        myContent.add(myText1,0);</b>
+<b class="fc"><i class="no-highlight">26</i>&nbsp;        myContent.add(myText2,1);</b>
+<b class="fc"><i class="no-highlight">27</i>&nbsp;        myContent.add(myText3,2);</b>
+<i class="no-highlight">28</i>&nbsp;        // filling second row of grid (3 columns) with buttons
+<b class="fc"><i class="no-highlight">29</i>&nbsp;        myContent.add(b1);</b>
+<b class="fc"><i class="no-highlight">30</i>&nbsp;        myContent.add(b2);</b>
+<b class="fc"><i class="no-highlight">31</i>&nbsp;        myContent.add(b3);</b>
+<b class="fc"><i class="no-highlight">32</i>&nbsp;        myFrame.pack();</b>
+<b class="fc"><i class="no-highlight">33</i>&nbsp;        myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</b>
+<b class="fc"><i class="no-highlight">34</i>&nbsp;        myFrame.setVisible(true);</b>
+<i class="no-highlight">35</i>&nbsp;    }
+<i class="no-highlight">36</i>&nbsp;       
+<i class="no-highlight">37</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-02-20 16:49</div>
+</div>
+</body>
+</html>

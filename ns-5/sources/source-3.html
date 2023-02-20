@@ -1,0 +1,142 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > IdleTimer</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">states.timer</a>
+</div>
+
+<h1>Coverage Summary for Class: IdleTimer (states.timer)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">IdleTimer</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (8/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    91,7%
+  </span>
+  <span class="absValue">
+    (11/12)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package states.timer;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import states.ClockState;
+<i class="no-highlight">4</i>&nbsp;
+<i class="no-highlight">5</i>&nbsp;public class IdleTimer extends AbstractTimer {
+<i class="no-highlight">6</i>&nbsp;
+<i class="no-highlight">7</i>&nbsp;	// use Singleton design pattern
+<b class="fc"><i class="no-highlight">8</i>&nbsp;	private IdleTimer() {} // make constructor invisible to clients</b>
+<b class="fc"><i class="no-highlight">9</i>&nbsp;	private static IdleTimer instance = null;</b>
+<i class="no-highlight">10</i>&nbsp;	public static IdleTimer Instance() {
+<b class="fc"><i class="no-highlight">11</i>&nbsp;	    if(instance == null) instance = new IdleTimer();       </b>
+<b class="fc"><i class="no-highlight">12</i>&nbsp;	    return instance;</b>
+<i class="no-highlight">13</i>&nbsp;	    }
+<i class="no-highlight">14</i>&nbsp;	
+<i class="no-highlight">15</i>&nbsp;    @Override
+<i class="no-highlight">16</i>&nbsp;    public ClockState up() {
+<b class="fc"><i class="no-highlight">17</i>&nbsp;    	if (memTimer &gt; 0) {</b>
+<b class="fc"><i class="no-highlight">18</i>&nbsp;    		timer = memTimer; </b>
+<b class="fc"><i class="no-highlight">19</i>&nbsp;    		return transition(ActiveTimer.Instance());</b>
+<i class="no-highlight">20</i>&nbsp;    		}
+<b class="nc"><i class="no-highlight">21</i>&nbsp;    	else { return this; }</b>
+<i class="no-highlight">22</i>&nbsp;    }
+<i class="no-highlight">23</i>&nbsp;    @Override
+<b class="fc"><i class="no-highlight">24</i>&nbsp;    public String getUpText() { return &quot;run&quot;; }</b>
+<i class="no-highlight">25</i>&nbsp;
+<i class="no-highlight">26</i>&nbsp;    @Override
+<i class="no-highlight">27</i>&nbsp;    public ClockState right() {
+<b class="fc"><i class="no-highlight">28</i>&nbsp;        return transition(SetTimer.Instance());</b>
+<i class="no-highlight">29</i>&nbsp;    }
+<i class="no-highlight">30</i>&nbsp;    @Override
+<b class="fc"><i class="no-highlight">31</i>&nbsp;    public String getRightText() {return &quot;set&quot;; }</b>
+<i class="no-highlight">32</i>&nbsp;   
+<i class="no-highlight">33</i>&nbsp;   public String getDisplayString() {
+<b class="fc"><i class="no-highlight">34</i>&nbsp;       return &quot;memTimer = &quot;+ memTimer;</b>
+<i class="no-highlight">35</i>&nbsp;   }
+<i class="no-highlight">36</i>&nbsp;
+<i class="no-highlight">37</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-02-20 16:49</div>
+</div>
+</body>
+</html>

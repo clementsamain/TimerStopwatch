@@ -1,0 +1,238 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > ConsoleGUI</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">gui</a>
+</div>
+
+<h1>Coverage Summary for Class: ConsoleGUI (gui)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ConsoleGUI</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/26)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">ConsoleGUI$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">ConsoleGUI$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">ConsoleGUI$3</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/32)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package gui;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import states.Context;
+<i class="no-highlight">4</i>&nbsp;import states.EventListener;
+<i class="no-highlight">5</i>&nbsp;
+<i class="no-highlight">6</i>&nbsp;import javax.swing.*;
+<i class="no-highlight">7</i>&nbsp;import java.awt.*;
+<i class="no-highlight">8</i>&nbsp;import java.awt.event.ActionEvent;
+<i class="no-highlight">9</i>&nbsp;import java.awt.event.ActionListener;
+<i class="no-highlight">10</i>&nbsp;
+<i class="no-highlight">11</i>&nbsp;// UNFINISHED WORK: THIS CLASS NEEDS TO BE REWRITTEN TO USE ANOTHER GUI
+<i class="no-highlight">12</i>&nbsp;// (NOT SWING, BUT DOING EVERYTHING DIRECTLY FROM THE CONSOLE.
+<i class="no-highlight">13</i>&nbsp;public class ConsoleGUI extends AbstractGUI {
+<i class="no-highlight">14</i>&nbsp;    
+<i class="no-highlight">15</i>&nbsp;    private JButton b1, b2, b3;
+<i class="no-highlight">16</i>&nbsp;
+<b class="nc"><i class="no-highlight">17</i>&nbsp;    public ConsoleGUI(EventListener o) { super(o); }</b>
+<i class="no-highlight">18</i>&nbsp;    
+<i class="no-highlight">19</i>&nbsp;    protected void initGUI() {
+<b class="nc"><i class="no-highlight">20</i>&nbsp;        b1 = new JButton();</b>
+<b class="nc"><i class="no-highlight">21</i>&nbsp;        b2 = new JButton();</b>
+<b class="nc"><i class="no-highlight">22</i>&nbsp;        b3 = new JButton();</b>
+<b class="nc"><i class="no-highlight">23</i>&nbsp;        JLabel myText1 = new JLabel();</b>
+<b class="nc"><i class="no-highlight">24</i>&nbsp;        JLabel myText2 = new JLabel();</b>
+<b class="nc"><i class="no-highlight">25</i>&nbsp;        JLabel myText3 = new JLabel();</b>
+<i class="no-highlight">26</i>&nbsp;
+<b class="nc"><i class="no-highlight">27</i>&nbsp;        JFrame myFrame = new JFrame(&quot;Chronometer&quot;);</b>
+<b class="nc"><i class="no-highlight">28</i>&nbsp;        Container myContent = myFrame.getContentPane();</b>
+<i class="no-highlight">29</i>&nbsp;        // grid layout with 2 rows and 3 columns
+<b class="nc"><i class="no-highlight">30</i>&nbsp;        myContent.setLayout(new GridLayout(2,3,1,1));</b>
+<i class="no-highlight">31</i>&nbsp;        // filling first row of grid (3 columns) with text information
+<b class="nc"><i class="no-highlight">32</i>&nbsp;        myContent.add(myText1,0);</b>
+<b class="nc"><i class="no-highlight">33</i>&nbsp;        myContent.add(myText2,1);</b>
+<b class="nc"><i class="no-highlight">34</i>&nbsp;        myContent.add(myText3,2);</b>
+<i class="no-highlight">35</i>&nbsp;        // filling second row of grid (3 columns) with buttons
+<b class="nc"><i class="no-highlight">36</i>&nbsp;        myContent.add(b1);</b>
+<b class="nc"><i class="no-highlight">37</i>&nbsp;        myContent.add(b2);</b>
+<b class="nc"><i class="no-highlight">38</i>&nbsp;        myContent.add(b3);</b>
+<b class="nc"><i class="no-highlight">39</i>&nbsp;        myFrame.pack();</b>
+<b class="nc"><i class="no-highlight">40</i>&nbsp;        myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</b>
+<b class="nc"><i class="no-highlight">41</i>&nbsp;        myFrame.setVisible(true);</b>
+<i class="no-highlight">42</i>&nbsp;    }
+<i class="no-highlight">43</i>&nbsp;
+<i class="no-highlight">44</i>&nbsp;    protected void addEventListener() {
+<b class="nc"><i class="no-highlight">45</i>&nbsp;        b1.addActionListener(new ActionListener() { </b>
+<i class="no-highlight">46</i>&nbsp;        	public void actionPerformed(ActionEvent e) {
+<b class="nc"><i class="no-highlight">47</i>&nbsp;        		observer.left();</b>
+<i class="no-highlight">48</i>&nbsp;                }
+<i class="no-highlight">49</i>&nbsp;        	});
+<b class="nc"><i class="no-highlight">50</i>&nbsp;        b2.addActionListener(new ActionListener() {</b>
+<i class="no-highlight">51</i>&nbsp;        	public void actionPerformed(ActionEvent e) {
+<b class="nc"><i class="no-highlight">52</i>&nbsp;        		observer.up();</b>
+<i class="no-highlight">53</i>&nbsp;                }
+<i class="no-highlight">54</i>&nbsp;        	});
+<b class="nc"><i class="no-highlight">55</i>&nbsp;        b3.addActionListener(new ActionListener() {</b>
+<i class="no-highlight">56</i>&nbsp;        	public void actionPerformed(ActionEvent e) {
+<b class="nc"><i class="no-highlight">57</i>&nbsp;        		observer.right();</b>
+<i class="no-highlight">58</i>&nbsp;                }
+<i class="no-highlight">59</i>&nbsp;        	});
+<i class="no-highlight">60</i>&nbsp;   }
+<i class="no-highlight">61</i>&nbsp;    
+<i class="no-highlight">62</i>&nbsp;    public void updateUI(Context c) {
+<b class="nc"><i class="no-highlight">63</i>&nbsp;    	System.out.println(</b>
+<b class="nc"><i class="no-highlight">64</i>&nbsp;    			&quot;Running in mode &quot; + c.getModeText() +</b>
+<b class="nc"><i class="no-highlight">65</i>&nbsp;    			&quot; in state &quot; + c.getStateText() +</b>
+<b class="nc"><i class="no-highlight">66</i>&nbsp;    			&quot; with value &quot; + c.getDisplayText() );</b>
+<i class="no-highlight">67</i>&nbsp;    }
+<i class="no-highlight">68</i>&nbsp;   
+<i class="no-highlight">69</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-02-20 16:49</div>
+</div>
+</body>
+</html>

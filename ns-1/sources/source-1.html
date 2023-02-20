@@ -1,0 +1,139 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > ChronometerMain</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">&lt;empty package name&gt;</a>
+</div>
+
+<h1>Coverage Summary for Class: ChronometerMain (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ChronometerMain</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (10/10)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;import gui.AbstractGUI;
+<i class="no-highlight">2</i>&nbsp;import gui.SwingGUI;
+<i class="no-highlight">3</i>&nbsp;import states.Context;
+<i class="no-highlight">4</i>&nbsp;
+<b class="fc"><i class="no-highlight">5</i>&nbsp;public class ChronometerMain {</b>
+<i class="no-highlight">6</i>&nbsp;    
+<i class="no-highlight">7</i>&nbsp;	private AbstractGUI g;
+<i class="no-highlight">8</i>&nbsp;	private Context c;
+<i class="no-highlight">9</i>&nbsp;   	
+<i class="no-highlight">10</i>&nbsp;    // The method run() ensures that with a given frequency
+<i class="no-highlight">11</i>&nbsp;    // the state machine&#39;s actions are executed with tick() and
+<i class="no-highlight">12</i>&nbsp;    // the ui is updated accordingly with updateUIText().    
+<i class="no-highlight">13</i>&nbsp;	private void run(int frequency) {
+<i class="no-highlight">14</i>&nbsp;        // infinite loop that asks the current state to do whatever it needs to do
+<i class="no-highlight">15</i>&nbsp;        // and that updates the graphical user interface accordingly
+<b class="fc"><i class="no-highlight">16</i>&nbsp; 		  g.updateUI(c);</b>
+<i class="no-highlight">17</i>&nbsp;    	  while (true) {
+<b class="fc"><i class="no-highlight">18</i>&nbsp;    		try { Thread.sleep(frequency); }</b>
+<b class="fc"><i class="no-highlight">19</i>&nbsp;    		catch (InterruptedException e) { e.printStackTrace(); }</b>
+<b class="fc"><i class="no-highlight">20</i>&nbsp; 	        g.updateUI(c);</b>
+<b class="fc"><i class="no-highlight">21</i>&nbsp; 	        c.tick();</b>
+<i class="no-highlight">22</i>&nbsp;  	      }
+<i class="no-highlight">23</i>&nbsp;      }
+<i class="no-highlight">24</i>&nbsp;    
+<i class="no-highlight">25</i>&nbsp;    public static void main(String[] args) {
+<b class="fc"><i class="no-highlight">26</i>&nbsp;        ChronometerMain myChrono = new ChronometerMain(); // create an instance of Chronometer;</b>
+<b class="fc"><i class="no-highlight">27</i>&nbsp;        myChrono.c = new Context(); // create the state machine context</b>
+<b class="fc"><i class="no-highlight">28</i>&nbsp;        myChrono.g = new SwingGUI(myChrono.c); // create the GUI and pass it the context</b>
+<i class="no-highlight">29</i>&nbsp;        
+<b class="fc"><i class="no-highlight">30</i>&nbsp;        myChrono.run(100); // and start running with frequency of 100 millisecs</b>
+<i class="no-highlight">31</i>&nbsp;        
+<i class="no-highlight">32</i>&nbsp;    }
+<i class="no-highlight">33</i>&nbsp;   
+<i class="no-highlight">34</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-02-20 16:49</div>
+</div>
+</body>
+</html>
