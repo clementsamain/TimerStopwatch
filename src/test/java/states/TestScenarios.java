@@ -76,6 +76,10 @@ public class TestScenarios {
 	  c.up();
 	  c.tick();
 	  assertSame(RunningStopwatch.Instance(), c.currentState);
+	  c.up();
+	  c.tick();
+	  assertSame(c.getUpText(), "unsplit");
+	  assertEquals(c.getDisplayText(), "lapTime = 3");
 
 	  c.left(); // go back to timer mode (remembering history state)
 	  c.tick();
