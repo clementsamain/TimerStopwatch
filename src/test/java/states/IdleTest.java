@@ -62,12 +62,4 @@ public class IdleTest {
 		assertSame(SetTimer.Instance(), context.currentState.right());
 	}
 
-	@Ignore
-	public void testLeft() {		
-		/* we cannot test the effect of the left() event here,
-		 * since it is defined in the superclass of the IdleTimer state.
-		 * It is tested in TimerTests.java.
-		 */
-	}
-
 }
