@@ -1,12 +1,9 @@
 package states;
 
-import static org.junit.Assert.*;
-import states.Context;
+import org.junit.jupiter.api.BeforeEach;
 import states.timer.*;
 
-import org.junit.Test;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -15,7 +12,7 @@ public class IdleTest {
 	private Context context;
 
 	@BeforeEach
-	public void setUp() {
+	public void setUp() throws Exception {
 		// reset the initial values of timer to avoid inferences between different consecutive tests
 		context = new Context();
 		context.currentState = IdleTimer.Instance(); // because we are testing the IdleTimer state here...
@@ -37,11 +34,11 @@ public class IdleTest {
 		   while memTimer > 0 in order to transition to ActiveTimer */
 		assertEquals(0, AbstractTimer.getTimer(), "For the value of timer we ");
 		assertEquals( 0, AbstractTimer.getMemTimer(), "For the value of memTimer we ");
-		assertSame(context.currentState, context.currentState.up());		
+		assertSame(context.currentState, context.currentState.up());
 	}
 
 	@Test
-	public void testUpWithTransition() {		
+	public void testUpWithTransition() {
 		/* test whether a series of events (and the corresponding transitions)
 		 * brings us to the ActiveTimer state,
 		 * more specifically, to its initial state RunningTimer*/
@@ -49,17 +46,17 @@ public class IdleTest {
 		//go to SetTimer state
 		context.right();
 		context.tick();
-		
+
 		//go back to IdleTimer state
 		context.right();
 		context.tick();
 		//check that value of memTimer is no longer 0 (value of timer is still 0)
 		assertEquals( 0, AbstractTimer.getTimer(), "For the value of timer we ");
 		assertEquals( 1, AbstractTimer.getMemTimer(), "For the value of timer we ");
-		}
+	}
 
 	@Test
-	public void testRight() {		
+	public void testRight() {
 		// test whether the right() event brings us to the SetTimer state
 		assertSame(SetTimer.Instance(), context.currentState.right());
 	}

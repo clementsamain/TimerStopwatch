@@ -1,8 +1,5 @@
 package states;
 
-import states.ClockState;
-import states.Context;
-import states.Mode;
 import states.stopwatch.AbstractStopwatch;
 import states.stopwatch.ResetStopwatch;
 import states.timer.AbstractTimer;
@@ -10,7 +7,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-import static org.junit.Assert.*;
 
 public class StopwatchTests {
 
@@ -35,8 +31,6 @@ public class StopwatchTests {
 
 		assertEquals(0, AbstractStopwatch.getTotalTime(), "For the value of totalTime we ");
 		assertEquals(0, AbstractStopwatch.getLapTime(), "For the value of lapTime we ");
-	    assertEquals("For the value of totalTime we ",0, AbstractStopwatch.getTotalTime());
-	    assertEquals("For the value of lapTime we ",0, AbstractStopwatch.getLapTime());
 	}
 
 	@Test
