@@ -60,6 +60,13 @@ public class TestScenarios {
 	  c.tick();
 	  assertEquals("value of memTimer ", 8, AbstractTimer.getMemTimer());
 	  assertEquals("value of timer ", 7, AbstractTimer.getTimer());
+
+	  c.right();
+	  c.tick();
+	  assertEquals("value of memTimer ", 8, AbstractTimer.getMemTimer());
+	  assertEquals("value of timer ", 7, AbstractTimer.getTimer());
+	  c.up(); // start running the timer
+	  c.tick();
 	  
 	  
 	  c.up(); // pause the timer
