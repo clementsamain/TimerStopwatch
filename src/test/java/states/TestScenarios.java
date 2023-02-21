@@ -53,6 +53,7 @@ public class TestScenarios {
 	  assertSame(PausedTimer.Instance(), c.currentState);
 	  assertEquals("value of memTimer ", 2, AbstractTimer.getMemTimer());
 	  assertEquals("value of timer ", 1, AbstractTimer.getTimer());
+
 	  
 	  c.left(); // go to stopwatch mode
 	  c.tick();
@@ -65,7 +66,13 @@ public class TestScenarios {
 	  assertSame(RunningStopwatch.Instance(), c.currentState);
 	  assertEquals("value of totalTime ", 1, AbstractStopwatch.getTotalTime());
 	  assertEquals("value of lapTime ", 0, AbstractStopwatch.getLapTime());
-	 
+
+	  c.right(); // reset
+	  c.tick();
+	  assertEquals("value of totalTime ", 0, AbstractStopwatch.getTotalTime());
+	  c.up(); //start running the stopwatch
+	  c.tick();
+
 	  c.up(); // record stopwatch laptime
 	  c.tick();
 	  assertSame(LaptimeStopwatch.Instance(), c.currentState);
