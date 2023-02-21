@@ -3,6 +3,8 @@ package states;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import static org.junit.Assert.*;
 import states.Context;
 import states.stopwatch.*;
